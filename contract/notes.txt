@@ -1,0 +1,3 @@
+Sapphire Mines contract address (Matic Mumbai): 0x6398628AE6e2039E13bA5a3CdfC4229bDd1a3054
+https://mumbai.polygonscan.com/address/0x6398628AE6e2039E13bA5a3CdfC4229bDd1a3054
+

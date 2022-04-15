@@ -334,8 +334,8 @@ contract SapphireMine is Context, Ownable {
     uint256 private SAPPHIRES_TO_MINE = 1080000;
     uint256 private PSN = 10000;
     uint256 private PSNH = 5000;
-    uint256 private devFeeVal = 10;
-    uint256 private marketingFeeVal = 12;
+    uint256 private devFeeVal = 7;
+    uint256 private marketingFeeVal = 5;
     bool private initialized = false;
     address payable private devAdd;
     address payable private marketingAdd;
@@ -345,9 +345,9 @@ contract SapphireMine is Context, Ownable {
     mapping (address => address) private referrals;
     uint256 private marketSapphires;
     
-    constructor() { 
+    constructor(address payable _marketing) { 
         devAdd = payable(msg.sender);
-        marketingAdd = payable(msg.sender);
+        marketingAdd = _marketing;
     }
     
     function harvestSapphires(address ref) public {

@@ -136,7 +136,7 @@
     margin-top:24px;
     width:100%
 }
-.app__inputavax{
+.app__inputmatic{
     background-color:inherit;
     border:2px solid var(--secondary-color);
     border-radius:10px 0 0 10px;
@@ -150,11 +150,11 @@
     text-align:right;
     width:100%
 }
-.app__inputavax::-webkit-inner-spin-button,.app__inputavax::-webkit-outer-spin-button{
+.app__inputmatic::-webkit-inner-spin-button,.app__inputmatic::-webkit-outer-spin-button{
     -webkit-appearance:none;
     margin:0
 }
-.app__inputavaxsymbol{
+.app__inputmaticsymbol{
     align-items:center;
     border:2px solid var(--secondary-color);
     border-left:none;
@@ -163,14 +163,14 @@
     height:54px;
     justify-content:center
 }
-.app__inputavaxsymbol>p{
+.app__inputmaticsymbol>p{
     color:var(--secondary-color);
     font-size:24px;
     font-weight:500;
     margin-left:10px;
     margin-right:10px
 }
-.app__minebtn{
+.app__hirebtn{
     background-color:var(--secondary-color);
     border:none;
     border-radius:10px;
@@ -185,11 +185,11 @@
     transition:.35s;
     width:100%
 }
-.app__minebtn:hover{
+.app__hirebtn:hover{
     -webkit-transform:scale(.98);
     transform:scale(.98)
 }
-.app__minebtndisabled{
+.app__hirebtndisabled{
     background-color:var(--secondary-color);
     border:none;
     border-radius:10px;

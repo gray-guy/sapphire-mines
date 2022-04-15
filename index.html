@@ -1,95 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+    <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="icon" href="">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="description" content="The most wealthy and resource-rich Sapphire mine in the Avalanche Universe. Mine Sapphire, Earn MATIC, Repeat">
     <title>Sapphire Mine</title>
+
     <link href="./css/main.css" rel="stylesheet">
-  </head>
-  <body>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/web3modal@1.9.0/dist/index.js"></script>
+    <script type="module" src="./js/backend.js"></script>
+
+    </head>
+    <body>
     <div id="root">
-      <div class="app">
+        <div class="app">
         <div class="app__nav">
-          <img class="app__logo" src="./images/SAPPHIREMINElogo.png" alt="Sapphire Mine Logo">
+            <img class="app__logo" src="./images/SAPPHIREMINElogo.png" alt="Sapphire Mine Logo">
         </div>
         <div class="app__topinfobar">
-          <a class="app__whitepaper" href="" target="_blank" rel="noreferrer">WhitePaper</a>
-          <span class="app__contestbutton">Creators Contest</span>
+            <a class="app__whitepaper" href="" target="_blank" rel="noreferrer">WhitePaper</a>
+            <span class="app__contestbutton">Creators Contest</span>
         </div>
         <div class="app__main">
-          <button class="app__walletconnect">CONNECT</button>
-          <h6 class="app__heading">Mine <span>Sapphire</span>. Earn <span>MATIC</span>. Repeat </h6>
-          <div class="app__interact">
-            <div class="app__interactmargin">
-              <div class="app__interactstats">
-                <div class="app__interactstatsdata">
-                  <p>Contract</p>
-                  <h5>0 MATIC</h5>
-                </div>
-                <div class="app__interactstatsdata">
-                  <p>Wallet</p>
-                  <h5>0 MATIC</h5>
-                </div>
-                <div class="app__interactstatsdata">
-                  <p>SAPPHIRES</p>
-                  <h5>0 SAPPHIRES</h5>
-                </div>
-              </div>
-              <div class="app__inputcontainer">
-                <input placeholder="0.1" class="app__inputavax" type="number">
-                <div class="app__inputavaxsymbol">
-                  <p>MATIC</p>
-                </div>
-              </div>
-              <!-- remove disable and add "app__minebtn" to class -->
-              <button disabled class="app__minebtndisabled">HIRE MINERS</button>
-              <div class="app__divider"></div>
-              <div class="app__interactstatsreward">
-                <p>Your Rewards</p>
-                <h5>0 MATIC</h5>
-              </div>
-              <div class="app__rewards">
-                <button class="app__rewardsbtndisabled" disabled="">RE-HIRE</button>
-                <button class="app__rewardsbtndisabled" disabled="">COLLECT</button>
-              </div>
+            <div id="prepare">
+                <button class="app__walletconnect" id="btn-connect">CONNECT</button>
             </div>
-          </div>
-          <div class="app__statistics">
+            <div id="connected" style="display: none">
+                <button class="app__walletconnect" id="btn-disconnect">Connected</button>
+            </div>
+            <!-- <button class="app__walletconnect">CONNECT</button> -->
+            <h6 class="app__heading">Mine <span>Sapphire</span>. Earn <span>MATIC</span>. Repeat </h6>
+            <div class="app__interact">
+            <div class="app__interactmargin">
+                <div class="app__interactstats">
+                <div class="app__interactstatsdata">
+                    <p>Contract</p>
+                    <h5 id="contractBalance">0 MATIC</h5>
+                </div>
+                <div class="app__interactstatsdata">
+                    <p>Wallet</p>
+                    <h5 id="walletBalance">0 MATIC</h5>
+                </div>
+                <div class="app__interactstatsdata">
+                    <p>SAPPHIRES</p>
+                    <h5 id="sapphiresBalance">0 SAPPHIRES</h5>
+                </div>
+                </div>
+                <div class="app__inputcontainer">
+                <input id="input-matic" placeholder="0.1" class="app__inputmatic" type="number">
+                <div class="app__inputmaticsymbol">
+                    <p>MATIC</p>
+                </div>
+                </div>
+                <!-- remove disabled and add "app__hirebtn" to class -->
+                <button id="hire-miners" disabled class="app__hirebtndisabled">HIRE MINERS</button>
+                <div class="app__divider"></div>
+                <div class="app__interactstatsreward">
+                <p>Your Rewards</p>
+                <h5 id="rewards">0 MATIC</h5>
+                </div>
+                <div class="app__rewards">
+                    <button id="rehire-miners" class="app__rewardsbtndisabled" disabled>RE-HIRE</button>
+                    <button id="collect" class="app__rewardsbtndisabled" disabled>COLLECT</button>
+                </div>
+            </div>
+            </div>
+            <div class="app__statistics">
             <div class="app__statisticsmargin">
-              <h5 class="app__statisticshead">Statistics</h5>
-              <div class="app__statisticsdivider"></div>
-              <div class="app__statisticsinfo">
+                <h5 class="app__statisticshead">Statistics</h5>
+                <div class="app__statisticsdivider"></div>
+                <div class="app__statisticsinfo">
                 <p>Daily Return</p>
                 <p>8%</p>
-              </div>
-              <div class="app__statisticsinfo">
+                </div>
+                <div class="app__statisticsinfo">
                 <p>APR</p>
                 <p>2,920%</p>
-              </div>
-              <div class="app__statisticsinfo">
+                </div>
+                <div class="app__statisticsinfo">
                 <p>Deposit Fee</p>
                 <p>8%</p>
-              </div>
+                </div>
             </div>
-          </div>
-          <!-- <div class="app__referral">
+            </div>
+            <div class="app__referral">
             <h5>Referral Link</h5>
-            <input class="app__referralinput" type="text" readonly="" value="https://www.rubymine.money?ref=">
+            <input id='create-ref' class="app__referralinput" type="text" readonly="" value="https://www.rubymine.money?ref=">
             <p>Earn 12% of the MATIC used to mine Sapphire <br> from anyone who uses your referral link </p>
-          </div> -->
+            </div>
         </div>
         <div class="app__socials">
-          <a href="" target="_blank" rel="noreferrer" class="app__socialslinks">
+            <a href="" target="_blank" rel="noreferrer" class="app__socialslinks">
             <img src="images/icons8-telegram-app-150.png" alt="Telegram Social">
-          </a>
-          <a href="" target="_blank" rel="noreferrer" class="app__socialslinks">
+            </a>
+            <a href="" target="_blank" rel="noreferrer" class="app__socialslinks">
             <img src="images/icons8-twitter-128.png" alt="Twitter Social">
-          </a>
+            </a>
         </div>
         <!-- <a class="app__business" href="">Business Inquiries</a> -->
-      </div>
+        </div>
     </div>
-  </body>
+    </body>
 </html>
