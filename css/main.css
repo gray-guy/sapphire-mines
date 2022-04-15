@@ -479,6 +479,11 @@
     --d:100%;
     color:var(--secondary-color)
 }
+
+#contest{
+    display: none;
+}
+
 .app__contestmodal{
     align-items:center;
     background-color:rgba(0,0,0,.9);
