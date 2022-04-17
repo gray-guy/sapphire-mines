@@ -1,4 +1,4 @@
-const sapphiremineAddress = '0x6398628AE6e2039E13bA5a3CdfC4229bDd1a3054';
+const sapphiremineAddress = '0x7146854856E3f373675105556c7D964B329606be';
 const sapphiremine_ABI = JSON.parse(`[{"inputs":[{"internalType":"address payable","name":"_marketing","type":"address"}],"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"previousOwner","type":"address"},{"indexed":true,"internalType":"address","name":"newOwner","type":"address"}],"name":"OwnershipTransferred","type":"event"},{"inputs":[{"internalType":"address","name":"ref","type":"address"}],"name":"buySapphires","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[{"internalType":"uint256","name":"eth","type":"uint256"},{"internalType":"uint256","name":"contractBalance","type":"uint256"}],"name":"calculateSapphireBuy","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"eth","type":"uint256"}],"name":"calculateSapphireBuySimple","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"sapphires","type":"uint256"}],"name":"calculateSapphireSell","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"getBalance","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"adr","type":"address"}],"name":"getMyMiners","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"adr","type":"address"}],"name":"getMySapphires","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"adr","type":"address"}],"name":"getSapphiresSinceLastHarvest","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"ref","type":"address"}],"name":"harvestSapphires","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"openMines","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[],"name":"owner","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"renounceOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"adr","type":"address"}],"name":"sapphireRewards","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"sellSapphires","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"newOwner","type":"address"}],"name":"transferOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"}]`);
 
 let sapphiremineContract;
@@ -73,7 +73,7 @@ async function fetchAccountData() {
     document.getElementById('collect').classList.remove('app__rewardsbtndisabled');
     document.getElementById('collect').classList.add('app__rewardsbtn');
 
-    document.getElementById('create-ref').value = `https://www.rubymine.money?ref=${selectedAccount}`
+    document.getElementById('create-ref').value = `https://sapphiremine.xyz/?ref=${selectedAccount}`
 
     sapphiremineContract = new web3.eth.Contract(sapphiremine_ABI, sapphiremineAddress);
 
@@ -96,7 +96,7 @@ function format_address(addr) {
 }
 
 async function getContractBalance() {
-    let balance = await web3.eth.getBalance('0x6398628AE6e2039E13bA5a3CdfC4229bDd1a3054');
+    let balance = await web3.eth.getBalance('0x7146854856E3f373675105556c7D964B329606be');
     let rounded_balance = (balance / 10**18).toFixed(2);
     console.log("Contract balance: " + rounded_balance);
     document.querySelector('#contractBalance').innerText = `${rounded_balance} MATIC`;

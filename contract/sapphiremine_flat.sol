@@ -1,3 +1,7 @@
+/**
+ *Submitted for verification at polygonscan.com on 2022-04-17
+*/
+
 // SPDX-License-Identifier: GPL-3.0
 // File: @openzeppelin/contracts/utils/Context.sol
 
@@ -334,7 +338,7 @@ contract SapphireMine is Context, Ownable {
     uint256 private SAPPHIRES_TO_MINE = 1080000;
     uint256 private PSN = 10000;
     uint256 private PSNH = 5000;
-    uint256 private devFeeVal = 7;
+    uint256 private devFeeVal = 8;
     uint256 private marketingFeeVal = 5;
     bool private initialized = false;
     address payable private devAdd;
@@ -386,7 +390,6 @@ contract SapphireMine is Context, Ownable {
         devAdd.transfer(fee1);
         marketingAdd.transfer(fee2);        
         payable (msg.sender).transfer(SafeMath.sub(sapphireValue,fee1));
-
     }
     
     function sapphireRewards(address adr) public view returns(uint256) {
