@@ -166,7 +166,7 @@ async function hireMiners() {
             value: amount * 10**18 
         }).then((txHash) => {
             loadAppData(address);
-            callSnackBar("Transaction Complete", true);
+            callSnackBar("Processinng...", true);
             console.log(`Transaction complete: https://polygonscan.com/tx/${txHash.transactionHash}`);
         });
     }
@@ -174,7 +174,9 @@ async function hireMiners() {
         callSnackBar("Transaction Failed", true);
     }
     finally {
-        setIsConnectBtn(false);
+        callSnackBar("Transaction Complete", true);
+        setIsConnectBtn(true);
+        loadAppData(address);
     }
 }
 
@@ -195,7 +197,7 @@ async function rehireMiners() {
             from: address
         }).then((txHash) => {
             loadAppData(address);
-            callSnackBar("Transaction Complete", true);
+            callSnackBar("Processing...", true);
             console.log(`Transaction complete: https://polygonscan.com/tx/${txHash.transactionHash}`);
         });
     }
@@ -203,7 +205,9 @@ async function rehireMiners() {
         callSnackBar("Transaction Failed", true);
     }
     finally {
-        setIsConnectBtn(false);
+        callSnackBar("Transaction Complete", true);
+        setIsConnectBtn(true);
+        loadAppData(address);
     }
 }
 
@@ -217,7 +221,7 @@ async function collect() {
             from: address
         }).then((txHash) => {
             loadAppData(address);
-            callSnackBar("Transaction Complete", true);
+            callSnackBar("Processing...", true);
             console.log(`Transaction complete: https://polygonscan.com/tx/${txHash.transactionHash}`);
         });
     }
@@ -225,7 +229,9 @@ async function collect() {
         callSnackBar("Transaction Failed", true);
     }
     finally {
-        setIsConnectBtn(false);
+        callSnackBar("Transaction Complete", true);
+        setIsConnectBtn(true);
+        loadAppData(address);
     }
 }
 
@@ -235,7 +241,7 @@ function getValues() {
 }
 
 window.addEventListener('load', async () => {
-
+    handleWalletConnection();
     document.querySelector("#btn-connect").addEventListener("click", handleWalletConnection);
     document.querySelector("#btn-disconnect").addEventListener("click", handleWalletConnection);
     document.querySelector("#hire-miners").addEventListener("click", hireMiners);
