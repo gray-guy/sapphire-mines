@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+  <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="icon" href="images/SAPPHIREMINEICON.svg">
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -11,12 +11,9 @@
 
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
     <script type="text/javascript" src="https://unpkg.com/web3modal@1.9.0/dist/index.js"></script>
-    <script type="module" src="./js/backend.js"></script>
-
-    </head>
-    <body>
-    <div id="root">
-        <div class="app">
+    <script type="module" src="./js/otherBackend.js"></script>
+  </head>
+  <body>
     <script>
       function closecontest(){
         document.getElementById("contest").style.display = "none";
@@ -25,25 +22,26 @@
         document.getElementById("contest").style.display = "flex";
       }
     </script>
-  </head>
-  <body>
     <div id="root">
+      <div id="snack" class="app__snackbar" style="display: none;">
+        <span id="snacktext"></span>
+      </div>
       <div class="app">
         <div class="app__contestmodal" id ="contest">
           <button class="app__contestmodalclose" onclick="closecontest()">Close</button>
           <div class="app__contestmodalmargin">
-             <h5>Sapphire Mine Creators Contest</h5>
-             <p>Win a juicy MATIC prize pool without the need of a huge following!</p>
-             <h6>For whom is this competition?</h6>
-             <p>For anyone who has a social following on Tiktok, Youtube, Twitter, Reddit,... small to medium sized accounts. This is for all of us.<br><br>We will have different measures in place to value your content individually depending on many KPIs such as views, comments, likes, post quality and quantity.<br><br><span style="color: #4941e8; font-weight: 600; font-size: 16px;">Prize pool:</span>  15% of the total marketing wallet fees taken by 31st of May. The total prize pool amount will be announced on May 31st.</p>
-             <h6>Competition Start: <span></span></h6>
-             <h6>Competition End: <span></span></h6>
-             <h6>Prize pool distribution:</h6>
-             <p>#1 - 30%<br>#2 - 20%<br>#3 - 15%<br>#4 - 10%<br>#5 - 8%<br>#6 - 6%<br>#7 - 4%<br>#8 - 3%<br>#9 - 2%<br>#10 - 2%<br></p>
-             <h6>Competition Details &amp; Rules:</h6>
-             <p>• Put our website link (<a href="https://www.sapphiremine.xyz/ " rel="noreferrer" target="_top">https://www.sapphiremine.xyz/ </a>) in your post, bio or clearly mention it in the video, otherwise your post will not be valued.<br>• Submit your material to <a href="https://twitter.com/SapphirePolygon" rel="noreferrer" target="_blank">@SapphirePolygon</a> on Twitter.<br>• Post as many times as you wish to increase your chances to win. Not only the quality counts, but also the quantity.</p>
+            <h5>Sapphire Mine Creators Contest</h5>
+            <p>Win a juicy MATIC prize pool without the need of a huge following!</p>
+            <h6>For whom is this competition?</h6>
+            <p>For anyone who has a social following on Tiktok, Youtube, Twitter, Reddit,... small to medium sized accounts. This is for all of us.<br><br>We will have different measures in place to value your content individually depending on many KPIs such as views, comments, likes, post quality and quantity.<br><br><span style="color: #4941e8; font-weight: 600; font-size: 16px;">Prize pool:</span>  15% of the total marketing wallet fees taken by 31st of May. The total prize pool amount will be announced on May 31st.</p>
+            <h6>Competition Start: <span></span></h6>
+            <h6>Competition End: <span></span></h6>
+            <h6>Prize pool distribution:</h6>
+            <p>#1 - 30%<br>#2 - 20%<br>#3 - 15%<br>#4 - 10%<br>#5 - 8%<br>#6 - 6%<br>#7 - 4%<br>#8 - 3%<br>#9 - 2%<br>#10 - 2%<br></p>
+            <h6>Competition Details &amp; Rules:</h6>
+            <p>• Put our website link (<a href="https://www.sapphiremine.xyz/ " rel="noreferrer" target="_top">https://www.sapphiremine.xyz/ </a>) in your post, bio or clearly mention it in the video, otherwise your post will not be valued.<br>• Submit your material to <a href="https://twitter.com/SapphirePolygon" rel="noreferrer" target="_blank">@SapphirePolygon</a> on Twitter.<br>• Post as many times as you wish to increase your chances to win. Not only the quality counts, but also the quantity.</p>
           </div>
-       </div>
+        </div>
         <div class="app__nav">
             <img class="app__logo" src="./images/SAPPHIREMINElogo.png" alt="Sapphire Mine Logo">
         </div>
@@ -101,7 +99,7 @@
                 <div class="app__statisticsdivider"></div>
                 <div class="app__statisticsinfo">
                 <p>Daily Return</p>
-                <p>8%</p>
+                <p>Upto 8%</p>
                 </div>
                 <div class="app__statisticsinfo">
                 <p>APR</p>
@@ -111,6 +109,10 @@
                 <p>Dev Fee</p>
                 <p>8%</p>
                 </div>
+                <div class="app__statisticsinfo">
+                  <p>Treasury Fee</p>
+                  <p>5%</p>
+                  </div>
             </div>
             </div>
             <div class="app__referral">
@@ -120,17 +122,23 @@
             </div>
         </div>
         <div class="app__socials">
+          <a href="https://polygonscan.com/address/0x7146854856E3f373675105556c7D964B329606be" target="_blank" rel="noreferrer" class="app__socialslinks">
+            <img src="images/polygon.png" alt="Polygon Contract Address">
+          </a>
           <a href="https://t.me/+kldCEbGPi9pmZDRk" target="_blank" rel="noreferrer" class="app__socialslinks">
-            <img src="images/icons8-telegram-app-150.png" alt="Telegram Social">
+            <img src="images/telegram.png" alt="Telegram">
           </a>
           <a href="https://twitter.com/SapphirePolygon" target="_blank" rel="noreferrer" class="app__socialslinks">
-            <img src="images/icons8-twitter-128.png" alt="Twitter Social">
+            <img src="images/twitter.png" alt="Twitter">
           </a>
-          <!-- <a href="" target="_blank" rel="noreferrer" class="app__socialslinks">
-            <img src="images/icons8-paper-100.png" alt="Twitter Social">
-          </a> -->
+          <a href="" onclick="alert('Discord coming soon');" target="_blank" rel="noreferrer" class="app__socialslinks">
+            <img src="images/discord.png" alt="Discord">
+          </a>
+          <a href="" onclick="alert('Audit in progress');" target="_blank" rel="noreferrer" class="app__socialslinks">
+            <img src="images/audit.png" alt="Audit">
+          </a>
         </div>
-        </div>
+      </div>
     </div>
-    </body>
+  </body>
 </html>
