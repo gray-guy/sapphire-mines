@@ -21,6 +21,12 @@
       function opencontest(){
         document.getElementById("contest").style.display = "flex";
       }
+      function closedisclaimer(){
+        document.getElementById("disclaimer").style.display = "none";
+      }
+      function opendisclaimer(){
+        document.getElementById("disclaimer").style.display = "flex";
+      }
     </script>
     <div id="root">
       <div id="snack" class="app__snackbar" style="display: none;">
@@ -42,12 +48,29 @@
             <p>• Put our website link (<a href="https://www.sapphiremine.xyz/ " rel="noreferrer" target="_top">https://www.sapphiremine.xyz/ </a>) in your post, bio or clearly mention it in the video, otherwise your post will not be valued.<br>• Submit your material to <a href="https://twitter.com/SapphirePolygon" rel="noreferrer" target="_blank">@SapphirePolygon</a> on Twitter.<br>• Post as many times as you wish to increase your chances to win. Not only the quality counts, but also the quantity.</p>
           </div>
         </div>
+        <div class="app__contestmodal" id ="disclaimer">
+          <button class="app__contestmodalclose" onclick="closedisclaimer()">Close</button>
+          <div class="app__contestmodalmargin">
+            <h5>Disclaimer</h5>
+            <h6>High Risk Investment</h6>
+            <p>
+              Investing in Sapphire Mine carries a high level of risk, and may not be suitable for all investors. Before deciding to invest in Sapphire Mine you should carefully consider your investment objectives, level of experience, and risk appetite. The possibility exists that you could sustain a loss of some or all of your initial investment and therefore you should not invest money that you cannot afford to lose. You should be aware of all the risks associated with high-risk projects such as Sapphire Mine, and seek advice from an independent financial advisor.
+            </p>
+            <p>
+              Sapphire Mine will not accept liability for any loss or damage, including without limitation to, any loss of profit, which may arise directly or indirectly from use of or reliance on such information.
+            </p>
+            <p>
+              Sapphire Mine makes no representation or warranties as to the accuracy and or timelines of the information contained herein. A qualified professional should be consulted before making any financial decisions.
+            </p>
+          </div>
+        </div>
         <div class="app__nav">
             <img class="app__logo" src="./images/SAPPHIREMINElogo.png" alt="Sapphire Mine Logo">
         </div>
         <div class="app__topinfobar">
-          <a class="app__whitepaper" onclick="alert('Coming Soon');" href="" target="_blank" rel="noreferrer">WhitePaper</a>
+          <span class="app__contestbutton" onclick="alert('Whitepaper coming soon');">Whitepaper</span>
           <span class="app__contestbutton" onclick="opencontest()">Creators Contest</span>
+          <span class="app__contestbutton" onclick="opendisclaimer()">Disclaimer</span>
         </div>
         <div class="app__main">
             <div id="prepare">
@@ -57,7 +80,7 @@
                 <button class="app__walletconnect" id="btn-disconnect">Connected</button>
             </div>
             <!-- <button class="app__walletconnect">CONNECT</button> -->
-            <h6 class="app__heading">Mine <span>Sapphire</span>. Earn <span>MATIC</span>. Repeat </h6>
+            <h6 class="app__heading">Mine <span>Sapphire</span>. Earn <span>MATIC</span>. Repeat.</h6>
             <div class="app__interact">
             <div class="app__interactmargin">
                 <div class="app__interactstats">

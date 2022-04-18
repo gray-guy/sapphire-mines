@@ -111,6 +111,10 @@ async function handleWalletConnection() {
 async function loadAppData(dataAddress) {
     const web3 = window.web3;
 
+    web3.eth.getGasPrice(function(error, result){
+        console.log("Network gas price: " + result);
+    });
+
     web3.eth.getBalance(dataAddress).then((response) => {
     const bal = parseFloat(web3.utils.fromWei(response)).toString().match(/^-?\d+(?:\.\d{0,2})?/)[0]
     walletBalance = bal;
